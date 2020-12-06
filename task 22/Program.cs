@@ -1,13 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-//using System.Text.Json.NET;
-using System.Text.Json.Serialization;
-
-//using Library;
 
 namespace task_2
 {
@@ -56,24 +48,68 @@ namespace task_2
 
             try
             {
-                Product auto4 = auto1 + auto2;
+                Automobile auto4 = auto1 + auto2;
                 list.Add(auto4);
+                Console.WriteLine(auto4.ToString());
             }
             catch (Exception)
             {
-                Console.WriteLine("Невозможно выполнить операцию");
+                Console.WriteLine("Невозможно выполнить операцию сложения");
             }
 
             try
             {
-                Product auto4 = auto1 + auto3;
-                list.Add(auto4);
+                Automobile auto5 = auto1 + auto3;
+                list.Add(auto5);
+                Console.WriteLine(auto5.ToString());
             }
             catch (Exception)
             {
-                Console.WriteLine("Невозможно выполнить операцию");
+                Console.WriteLine("Невозможно выполнить операцию сложения");
             }
 
+
+            try
+            {
+                Phone phone4 = phone1 - 500;
+                list.Add(phone4);
+                Console.WriteLine(phone4.ToString());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Невозможно выполнить операцию вычитания");
+            }
+
+            try
+            {
+                Phone phone5 = phone3 - 15;
+                list.Add(phone5);
+                Console.WriteLine(phone5.ToString());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Невозможно выполнить операцию вычитания");
+            }
+
+            try
+            {
+                int n = (int)watch1;
+                Console.WriteLine(watch1.Name + " стоит " + n + " копеек");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Невозможно выполнить операцию приведения");
+            }
+
+            try
+            {
+                double n = (double)watch1;
+                Console.WriteLine(watch1.Name + " стоит " + n + " копеек");
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Невозможно выполнить операцию приведения");
+            }
 
 
             Console.ReadKey();
