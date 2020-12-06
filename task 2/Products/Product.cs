@@ -26,7 +26,6 @@ namespace task_2
             Amount = amount;
         }
 
-
         public double UnitCost()
         {
             return Price * Markup;

@@ -41,14 +41,13 @@ namespace task_2
             return base.ToString();
         }
 
-        /*
-        public static Phone operator +(Phone p1, Phone p2)
+        public static Phone operator + (Phone p1, Phone p2)
         {
             if (p1.Name == p2.Name)
             {
-                double sum1 = (p1.Amount * p1.Price * p1.Markup);
-                double sum2 = (p2.Amount * p2.Price * p2.Markup);
-                double avrPrice = (sum1 + sum2) / (p1.Price * p1.Markup + p2.Price * p2.Markup);
+                double sum1 = p1.TotalCost();
+                double sum2 = p2.TotalCost();
+                double avrPrice = (sum1 + sum2) / (p1.UnitCost() + p2.UnitCost());
 
                 double avrMarkup = (p1.Markup + p2.Markup) / 2;
 
@@ -58,6 +57,24 @@ namespace task_2
             }
             else
                 throw new Exception();
-        }*/
+        }
+
+        public static Phone operator - (Phone p, int sub)
+        {
+            int num = p.Amount - sub;
+            if (num < 0)
+                throw new Exception();
+            return new Phone(p.Name, p.Price, p.Markup, num);
+        }
+
+        public static implicit operator int(Phone p)
+        {
+            return (int)(p.Price * 100);
+        }
+
+        public static implicit operator double(Phone p)
+        {
+            return p.Price;
+        }
     }
 }
