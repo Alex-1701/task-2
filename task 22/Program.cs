@@ -47,13 +47,32 @@ namespace task_2
             // Очистили список
             list.Clear();
 
-            // Наново загрузили из файла
+            // Заново загрузили из файла
             File.FileToList(list, "../../../input.json");
 
-            // Выводим в консоль чтобы оченить результат
-            Console.WriteLine("Read: ");
+            // Выводим в консоль чтобы оценить результат
+            Console.WriteLine("Read:");
             Show.ShowList(list);
-            
+
+            try
+            {
+                Product auto4 = auto1 + auto2;
+                list.Add(auto4);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Невозможно выполнить операцию");
+            }
+
+            try
+            {
+                Product auto4 = auto1 + auto3;
+                list.Add(auto4);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Невозможно выполнить операцию");
+            }
 
 
 
