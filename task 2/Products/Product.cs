@@ -60,7 +60,7 @@ namespace task_2
             return (Name + "\t\t" + Price + "\t\t" + Markup + "\t\t" + Amount);
         }
 
-        public static Product operator +(Product p1, Product p2)
+        public static Product operator + (Product p1, Product p2)
         {
             if (p1.Name == p2.Name)
             {
@@ -81,7 +81,8 @@ namespace task_2
         public static Product operator - (Product p, int sub)
         {
             int num = p.Amount - sub;
-            if (num < 0) num = 0;
+            if (num < 0) 
+                throw new Exception();
             return new Product(p.Name, p.Price, p.Markup, num);
         }
 
